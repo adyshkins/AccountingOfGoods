@@ -1,0 +1,118 @@
+﻿<Window x:Class="AccountingOfGoods.Windows.SupportMessageWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AccountingOfGoods.Windows"
+        mc:Ignorable="d"
+        Title="Учет товара на складе"
+        Height="800" Width="1200"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Icon="/AccountingOfGoods;component/Resourses/productbox.ico">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+        <Border Grid.Row="2"
+                Grid.RowSpan="5"
+                Grid.ColumnSpan="2"
+                Background="#FFE1D9D0"></Border>
+        <TextBlock Text="Logo"
+                   HorizontalAlignment="Left"
+                   Margin="10 0"
+                   FontSize="40" 
+                   FontFamily="Snap ITC"/>
+        <TextBlock Grid.Row="1" 
+                       Text="Обращение в службу поддержки"
+                       FontSize="22"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"/>
+
+        <TextBlock Text="Цель обращения"
+                   Grid.Column="0"
+                   Grid.Row="2"
+                   FontSize="22"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Center"
+                   Margin="0 0 20 0"/>
+
+        <ComboBox x:Name="cmbGoalOfRequest" 
+                  Grid.Column="1"
+                  Grid.Row="2"
+                  FontSize="18"
+                  VerticalAlignment="Center"
+                  Height="40"
+                  Margin="50 0"
+                  IsEditable="True"/>
+
+        <TextBlock Text="Email для обратной связи"
+                   Grid.Column="0"
+                   Grid.Row="3"
+                   FontSize="22"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Center"
+                   Margin="0 0 20 0"/>
+
+        <TextBox Grid.Column="1"
+                  Grid.Row="3"
+                  FontSize="18"
+                  VerticalAlignment="Center"
+                  Height="40"
+                  Margin="50 0"/>
+
+        <TextBlock Text="Текст обращения"
+                   Grid.Column="0"
+                   Grid.Row="4"
+                   FontSize="22"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Center"
+                   Margin="0 0 20 0"/>
+
+        <TextBox Grid.Column="1"
+                 Grid.Row="3"
+                 Grid.RowSpan="4"
+                 FontSize="18"
+                 VerticalAlignment="Center"
+                 Height="200"
+                 Margin="50 0"
+                 AcceptsReturn="True"/>
+
+        <WrapPanel Grid.Column="1"
+                   Grid.Row="7"
+                   Margin="50 0"
+                   VerticalAlignment="Center">
+            
+            <Button x:Name="btnSendMessage"
+                    Width="250"
+                    Height="40"
+                    Margin="0 0 40 0"
+                    Content="Отправить сообщение"
+                    FontSize="18"
+                    Click="btnSendMessage_Click"/>
+
+            <Button x:Name="btnClose"
+                    Width="250"
+                    Height="40"
+                    Content="Отмена"
+                    FontSize="18"
+                    Click="btnClose_Click"/>
+        </WrapPanel>
+        
+    </Grid>
+</Window>

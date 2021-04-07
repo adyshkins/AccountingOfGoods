@@ -1,0 +1,106 @@
+﻿<Window x:Class="AccountingOfGoods.Windows.EmployeeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AccountingOfGoods.Windows"
+        mc:Ignorable="d"
+        Title="Учет товара на складе"  
+        Height="800" Width="1200"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Icon="/AccountingOfGoods;component/Resourses/productbox.ico">
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="12*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Logo"
+                   HorizontalAlignment="Center"
+                   Margin="10 0"
+                   FontSize="40" 
+                   FontFamily="Snap ITC"/>
+        
+        <!-- меню -->
+        <Border Grid.Row="1"
+                Background="#FFE1D9D0">           
+       
+        <StackPanel >
+                <Button x:Name="btnProduct" 
+                        Margin="0 30 0 10"
+                        Width="150"
+                        Height="60"
+                        Background="{x:Null}"
+                        BorderThickness="1"
+                        BorderBrush="Black"
+                        FontSize="20"
+                        Click="btnProduct_Click">
+                    <Button.Content>
+                        <TextBlock Text="Работа с товарами" 
+                                   TextWrapping="Wrap"
+                                   Foreground="Brown"/>
+                    </Button.Content>
+                </Button>
+
+                <Button x:Name="btnProductInStock" 
+                        Margin="0 10"
+                    Width="150"
+                    Height="60"
+                    Background="{x:Null}"
+                    BorderThickness="1"
+                    BorderBrush="Black"
+                    FontSize="20"
+                        Click="btnProductInStock_Click">
+                    <Button.Content>
+                        <StackPanel>
+                            <TextBlock Text="Сформировать" 
+                                   TextWrapping="Wrap"
+                                   Foreground="Brown"/>
+                            <TextBlock Text="отчет" 
+                                   TextWrapping="Wrap"
+                                   Foreground="Brown"
+                                       HorizontalAlignment="Center"/>
+                        </StackPanel>
+                        
+                    </Button.Content>
+                </Button>
+
+                <Button x:Name="btnSupport" 
+                        Margin="0 10"
+                        Width="150"
+                        Height="60"
+                        Background="{x:Null}"
+                        BorderThickness="1"
+                        BorderBrush="Black"
+                        FontSize="20"
+                        Click="btnSupport_Click">
+                    <Button.Content>
+                        <TextBlock Text="Справка" 
+                                   TextWrapping="Wrap"
+                                   Foreground="Brown"/>
+                    </Button.Content>
+                </Button>
+            </StackPanel>
+
+            
+        </Border>
+        <Button x:Name="btnBack" 
+                Grid.Row="1" 
+                Content="НАЗАД"
+                VerticalAlignment="Bottom"
+                Height="40"
+                Margin="30"
+                Background="{x:Null}"
+                Click="btnBack_Click"/>
+
+        <Frame x:Name="frame" Grid.Row="1"
+               Grid.Column="1"
+               NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>
