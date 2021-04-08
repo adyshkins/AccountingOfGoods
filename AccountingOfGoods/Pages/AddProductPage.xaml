@@ -22,16 +22,17 @@
                        FontSize="20"
                        HorizontalAlignment="Left"
                            Margin="0 0 20 0"/>
-                <TextBox BorderBrush="Black"
-                     BorderThickness="1"
-                     Width="600"
-                     Height="35"
-                     Margin="50 0 30 0"
-                     VerticalAlignment="Center"
-                     VerticalContentAlignment="Center"
-                     HorizontalContentAlignment="Center"
-                     FontSize="20"
-                     Foreground="Brown"/>
+                <TextBox x:Name="txtIdProduct"
+                            BorderBrush="Black"
+                            BorderThickness="1"
+                            Width="600"
+                            Height="35"
+                            Margin="50 0 30 0"
+                            VerticalAlignment="Center"
+                            VerticalContentAlignment="Center"
+                            HorizontalContentAlignment="Center"
+                            FontSize="20"
+                            Foreground="Brown"/>
             </WrapPanel>
 
             <WrapPanel HorizontalAlignment="Right"
@@ -40,16 +41,17 @@
                        FontSize="20"
                        HorizontalAlignment="Left"
                            Margin="0 0 20 0"/>
-                <TextBox BorderBrush="Black"
-                     BorderThickness="1"
-                     Width="600"
-                     Height="35"
-                     Margin="50 0 30 0"
-                     VerticalAlignment="Center"
-                     VerticalContentAlignment="Center"
-                     HorizontalContentAlignment="Center"
-                     FontSize="20"
-                     Foreground="Brown"/>
+                <TextBox x:Name="txtNameProduct"
+                            BorderBrush="Black"
+                            BorderThickness="1"
+                            Width="600"
+                            Height="35"
+                            Margin="50 0 30 0"
+                            VerticalAlignment="Center"
+                            VerticalContentAlignment="Center"
+                            HorizontalContentAlignment="Center"
+                            FontSize="20"
+                            Foreground="Brown"/>
             </WrapPanel>
 
             <WrapPanel HorizontalAlignment="Right"
@@ -58,35 +60,39 @@
                        FontSize="20"
                        HorizontalAlignment="Left"
                            Margin="0 0 20 0"/>
-                <ComboBox BorderBrush="Black"
-                     BorderThickness="1"
-                     Width="600"
-                     Height="35"
-                     Margin="50 0 30 0"
-                     VerticalAlignment="Center"
-                     VerticalContentAlignment="Center"
-                     HorizontalContentAlignment="Center"
-                     FontSize="20"
-                     Foreground="Brown"
+                <ComboBox x:Name="cmbNameCategory"
+                          BorderBrush="Black"
+                          BorderThickness="1"
+                          Width="600"
+                          Height="35"
+                          Margin="50 0 30 0"
+                          VerticalAlignment="Center"
+                          VerticalContentAlignment="Center"
+                          HorizontalContentAlignment="Center"
+                          FontSize="20"
+                          Foreground="Brown"
                           IsEditable="True"/>
             </WrapPanel>
 
             <WrapPanel HorizontalAlignment="Right"
                        Margin="0 30 30 0">
                 <TextBlock Text="Единица измерения:"
-                       FontSize="20"
-                       HorizontalAlignment="Left"
+                           FontSize="20"
+                           HorizontalAlignment="Left"
                            Margin="0 0 20 0"/>
-                <TextBox BorderBrush="Black"
-                     BorderThickness="1"
-                     Width="600"
-                     Height="35"
-                     Margin="50 0 30 0"
-                     VerticalAlignment="Center"
-                     VerticalContentAlignment="Center"
-                     HorizontalContentAlignment="Center"
-                     FontSize="20"
-                     Foreground="Brown"/>
+                
+                <ComboBox x:Name="cmbUnit"
+                          BorderBrush="Black"
+                          BorderThickness="1"
+                          Width="600"
+                          Height="35"
+                          Margin="50 0 30 0"
+                          VerticalAlignment="Center"
+                          VerticalContentAlignment="Center"
+                          HorizontalContentAlignment="Center"
+                          FontSize="20"
+                          IsEditable="True"
+                          Foreground="Brown"/>
             </WrapPanel>
 
             <WrapPanel HorizontalAlignment="Right"

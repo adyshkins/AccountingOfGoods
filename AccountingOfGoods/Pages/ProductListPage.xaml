@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:AccountingOfGoods.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="1000"
-      Title="ProductListPage">
+      Title="ProductListPage"
+      Loaded="Page_Loaded">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -29,7 +30,8 @@
                      FontSize="20"
                      Foreground="Brown"
                      GotFocus="txtSearchById_GotFocus"
-                     LostFocus="txtSearchById_LostFocus"/>
+                     LostFocus="txtSearchById_LostFocus"
+                     TextChanged="txtSearchById_TextChanged"/>
 
             <TextBox x:Name="txtSearchByName" 
                      Text="Поиск по названию" 
@@ -44,7 +46,8 @@
                      FontSize="20"
                      Foreground="Brown" 
                      GotFocus="txtSearchByName_GotFocus"
-                     LostFocus="txtSearchByName_LostFocus"/>
+                     LostFocus="txtSearchByName_LostFocus"
+                     TextChanged="txtSearchByName_TextChanged"/>
 
             <TextBox x:Name="txtSearchByNum" 
                      Text="Поиск по № секции" 
@@ -59,7 +62,8 @@
                      FontSize="20"
                      Foreground="Brown"
                      GotFocus="txtSearchByNum_GotFocus"
-                     LostFocus="txtSearchByNum_LostFocus"/>
+                     LostFocus="txtSearchByNum_LostFocus"
+                     TextChanged="txtSearchByNum_TextChanged"/>
         </WrapPanel>
 
         <WrapPanel Grid.Row="1" VerticalAlignment="Center">
@@ -67,7 +71,8 @@
                        Margin="118 0 20 0"
                        FontSize="16"
                        VerticalAlignment="Center"/>
-            <ComboBox BorderBrush="Black"
+            <ComboBox x:Name="cmbSirting" 
+                      BorderBrush="Black"
                       BorderThickness="1"
                       Width="200"
                       Height="35"
@@ -94,84 +99,91 @@
                     FontSize="18"
                     Click="btnAddProduct_Click"/>
         </WrapPanel>
+       
+            <ListView x:Name="lvProduct"
+                  Grid.Row="2"
+                  Margin="5"
+                      Background="#E5E5E5">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
 
-        <ListView Grid.Row="2"
-                  Margin="5">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ScrollViewer>
-                         <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <!-- Левая колонка -->
-                        <TextBlock Grid.Row="0"
+                    <Grid Margin="10 5" Background="#FFFFFF">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="600"/>
+                                <ColumnDefinition Width="350"/>
+                            </Grid.ColumnDefinitions>
+                            <!-- Левая колонка -->
+                            <TextBlock Grid.Row="0"
                    Grid.Column="0" 
-                   Text="Артикул: 123456"
+                   Text="{Binding GetId}"
                    VerticalAlignment="Center"
                    Margin="10 0 0 0"
                    FontSize="18"/>
 
-                        <TextBlock Grid.Row="1"
+                            <TextBlock Grid.Row="1"
                    Grid.Column="0" 
-                   Text="Контейнер с крышкой 28*20*14 см/5 л"
+                   Text="{Binding GetName}"
                    VerticalAlignment="Center"
                    Margin="10 0 0 0"
                    FontSize="18"
                    FontWeight="Bold"/>
 
-                        <TextBlock Grid.Row="2"
+                            <TextBlock Grid.Row="2"
                    Grid.Column="0" 
-                   Text="Единица измерения: упаковка по 10 шт."
+                   Text="{Binding GetUnit}"
                    VerticalAlignment="Center"
                    Margin="10 0 0 0"
                    FontSize="18"/>
 
-                        <TextBlock Grid.Row="3"
+                            <TextBlock Grid.Row="3"
                    Grid.Column="0" 
-                   Text="Остаток на складе: 127     № секции хранения: A12"
+                   Text="{Binding GetStockAndStorage}"
                    VerticalAlignment="Center"
                    Margin="10 0 0 0"
                    FontSize="18"/>
 
-                        <!-- Правая колонка -->
+                            <!-- Правая колонка -->
 
-                        <TextBlock Grid.Row="0"
+                            <TextBlock Grid.Row="0"
                    Grid.Column="1" 
-                   Text="Категория товара: Коробка и корзины"
+                   Text="{Binding GetCategory}"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Right"
                    Margin="0 0 20 0"
                    FontSize="18"/>
 
-                        <WrapPanel Grid.Row="2"
+                            <WrapPanel Grid.Row="2"
                    Grid.Column="1"
                    Grid.RowSpan="2"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Right"
                    Margin="0 0 20 0">
-                            <TextBlock Text="Добавить движение товара"
+                                <TextBlock Text="Добавить движение товара"
                        FontSize="18"
                        VerticalAlignment="Center"
                        Foreground="Brown"
                        Margin="0 0 30 0"/>
-                            <Button Content="->"
-                    FontSize="25"
-                    Width="40"
-                    Height="40"/>
-                        </WrapPanel>
-                    </Grid>
-                    </ScrollViewer>
-                   
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+                                <Button x:Name="btnStockProduct" 
+                                        FontSize="25"
+                                        Width="40"
+                                        Height="40"
+                                        Click="btnStockProduct_Click">
+                                    <Button.Content>
+                                        <Image Source="/AccountingOfGoods;component/Resourses/icons8.png"/>
+                                    </Button.Content>
+                                </Button>
+
+                            </WrapPanel>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+      
     </Grid>
 </Page>

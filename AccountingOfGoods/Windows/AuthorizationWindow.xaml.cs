@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using AccountingOfGoods.Windows;
 using AccountingOfGoods.Pages;
+using AccountingOfGoods.EF;
 
 namespace AccountingOfGoods
 {
@@ -22,7 +23,7 @@ namespace AccountingOfGoods
     /// </summary>
     public partial class AuthorizationWindow : Window
     {
-        bool isSupport = false;
+        
         public AuthorizationWindow()
         {
             InitializeComponent();
@@ -30,10 +31,22 @@ namespace AccountingOfGoods
 
         private void btnSignIN_Click(object sender, RoutedEventArgs e)
         {
-            EmployeeWindow employeeWindow = new EmployeeWindow();
-            Hide();
-            employeeWindow.ShowDialog();
-            Show();
+            var activUser = AppData.Context.User.ToList().Where(i => i.Login == txtLogin.Text && i.Password == txtPassword.Password).FirstOrDefault();
+
+            if (activUser != null)
+            {
+                ClassHelper.UserData.activUser = activUser;
+
+                EmployeeWindow employeeWindow = new EmployeeWindow();
+                Hide();
+                employeeWindow.ShowDialog();
+                Show();
+            }
+            else
+            {
+                MessageBox.Show("Неверный логин или пароль", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            
         }
 
         private void TextBlock_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using AccountingOfGoods.Pages;
+using AccountingOfGoods.EF;
 
 namespace AccountingOfGoods.Windows
 {

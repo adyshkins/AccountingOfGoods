@@ -89,9 +89,19 @@
 
         <Border Grid.Row="2"
                 Background="#FFF8F8F8">
-            <ListView Margin="10"
-                      Background="{x:Null}">
-                
+            <ListView x:Name="lvProductInStock" Margin="10"
+                      Background="{x:Null}" HorizontalAlignment="Center">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Артикул" Width="100" DisplayMemberBinding="{Binding IDProduct}"/>
+                        <GridViewColumn Header="Название" Width="260" DisplayMemberBinding="{Binding Product.NameProduct}"/>
+                        <GridViewColumn Header="Ед.изм" Width="100" DisplayMemberBinding="{Binding Product.Unit.NameUnit}"/>
+                        <GridViewColumn Header="Начальный остаток" Width="150" DisplayMemberBinding="{Binding}"/>
+                        <GridViewColumn Header="Приход" Width="100" DisplayMemberBinding="{Binding}"/>
+                        <GridViewColumn Header="Расход" Width="100" DisplayMemberBinding="{Binding}"/>
+                        <GridViewColumn Header="Конечный остаток" Width="150" DisplayMemberBinding="{Binding}"/>
+                    </GridView>
+                </ListView.View>
             </ListView>
         </Border>
 

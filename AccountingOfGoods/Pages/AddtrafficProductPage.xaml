@@ -51,17 +51,13 @@
                    VerticalAlignment="Center"
                    Margin="0 0 20 0"/>
 
-        <TextBox Grid.Row="1" 
+        <TextBox x:Name="txtIDProduct" 
+                 Grid.Row="1" 
                  Grid.Column="1"
-                 BorderBrush="Black"
-                 BorderThickness="1"                 
-                 Height="35"
                  Margin="50 0 30 0"
-                 VerticalAlignment="Center"
-                 VerticalContentAlignment="Center"
-                 HorizontalContentAlignment="Center"
-                 FontSize="20"
-                 Foreground="Brown"/>
+                 Padding="5 0 0 0"
+                 IsReadOnly="True"                 
+                 Style="{StaticResource TextBoxStyle1}"/>
 
         <TextBlock Grid.Row="1" 
                    Grid.Column="2"
@@ -71,17 +67,12 @@
                    HorizontalAlignment="Right"
                    VerticalAlignment="Center"/>
 
-        <TextBox Grid.Row="1" 
-                 Grid.Column="3"
-                 BorderBrush="Black"
-                 BorderThickness="1"                 
-                 Height="35"
-                 Margin="50 0 30 0"
-                 VerticalAlignment="Center"
-                 VerticalContentAlignment="Center"
-                 HorizontalContentAlignment="Center"
-                 FontSize="20"
-                 Foreground="Brown"/>
+        <TextBox x:Name="txtStorage" 
+                 Grid.Row="1" 
+                 Grid.Column="3"                
+                 Padding="5 0 0 0"                              
+                 IsReadOnly="True"
+                 Style="{StaticResource TextBoxStyle1}"/>
 
         <TextBlock Grid.Row="2" 
                    Grid.Column="0" 
@@ -92,18 +83,13 @@
                    VerticalAlignment="Center"
                    Margin="0 0 20 0"/>
 
-        <TextBox Grid.Row="2" 
+        <TextBox x:Name="txtNameProduct" 
+                 Grid.Row="2" 
                  Grid.Column="1"
-                 Grid.ColumnSpan="3"
-                 BorderBrush="Black"
-                 BorderThickness="1"
-                 Height="35"
-                 Margin="50 0 30 0"
-                 VerticalAlignment="Center"
-                 VerticalContentAlignment="Center"
-                 HorizontalContentAlignment="Center"
-                 FontSize="20"
-                 Foreground="Brown"/>
+                 Grid.ColumnSpan="3"            
+                                 
+                 IsReadOnly="True"
+                 Style="{StaticResource TextBoxStyle1}"/>
 
         <TextBlock Grid.Row="3" 
                    Grid.Column="0" 
@@ -114,17 +100,11 @@
                    VerticalAlignment="Center"
                    Margin="0 0 20 0"/>
 
-        <TextBox Grid.Row="3" 
-                 Grid.Column="1"
-                 BorderBrush="Black"
-                 BorderThickness="1"                 
-                 Height="35"
-                 Margin="50 0 30 0"
-                 VerticalAlignment="Center"
-                 VerticalContentAlignment="Center"
-                 HorizontalContentAlignment="Center"
-                 FontSize="20"
-                 Foreground="Brown"/>
+        <TextBox x:Name="txtInStock" 
+                 Grid.Row="3" 
+                 Grid.Column="1"                 
+                 IsReadOnly="True"
+                 Style="{StaticResource TextBoxStyle1}"/>
 
         <TextBlock Grid.Row="3" 
                    Grid.Column="2" 
@@ -135,17 +115,11 @@
                    VerticalAlignment="Center"
                    Margin="0 0 20 0"/>
 
-        <TextBox Grid.Row="3" 
-                 Grid.Column="3"
-                 BorderBrush="Black"
-                 BorderThickness="1"                 
-                 Height="35"
-                 Margin="50 0 30 0"
-                 VerticalAlignment="Center"
-                 VerticalContentAlignment="Center"
-                 HorizontalContentAlignment="Center"
-                 FontSize="20"
-                 Foreground="Brown"/>
+        <TextBox x:Name="txtUnit" 
+                 Grid.Row="3" 
+                 Grid.Column="3"                
+                 IsReadOnly="True"
+                 Style="{StaticResource TextBoxStyle1}"/>
 
         <TextBlock Grid.Row="4" 
                    Grid.Column="0" 
@@ -156,17 +130,18 @@
                    VerticalAlignment="Center"
                    Margin="0 0 20 0"/>
 
-        <ComboBox Grid.Row="4" 
+        <ComboBox x:Name="cmbAction" Grid.Row="4" 
                   Grid.Column="1" 
                   BorderBrush="Black"
                   BorderThickness="1"                                 
                   Height="35"
                   Margin="50 0 30 0"
+                  Padding="5 0 0 0"
                   VerticalAlignment="Center"
                   VerticalContentAlignment="Center"
-                  HorizontalContentAlignment="Center"
-                  FontSize="20"
-                  Foreground="Brown"
+                  HorizontalContentAlignment="Left"
+                  FontSize="15"
+                  Foreground="#5F3504"
                   IsEditable="True"/>
 
         <TextBlock Grid.Row="4" 
@@ -178,17 +153,21 @@
                    VerticalAlignment="Center"
                    Margin="0 0 20 0"/>
 
-        <TextBox Grid.Row="4" 
-                 Grid.Column="3"
-                 BorderBrush="Black"
-                 BorderThickness="1"                 
-                 Height="35"
-                 Margin="50 0 30 0"
-                 VerticalAlignment="Center"
-                 VerticalContentAlignment="Center"
-                 HorizontalContentAlignment="Center"
-                 FontSize="20"
-                 Foreground="Brown"/>
+        <ComboBox x:Name="cmbStorageOut" 
+                  Grid.Row="4" 
+                  Grid.Column="3"
+                  BorderBrush="Black"
+                  BorderThickness="1"                                 
+                  Height="35"
+                  Margin="50 0 30 0"
+                  Padding="5 0 0 0"
+                  VerticalAlignment="Center"
+                  VerticalContentAlignment="Center"
+                  HorizontalContentAlignment="Left"
+                  FontSize="15"
+                  Foreground="#5F3504"
+                  IsEditable="True"
+                  SelectionChanged="cmbStorageOut_SelectionChanged"/>
 
         <TextBlock Grid.Row="5" 
                    Grid.Column="0" 
@@ -199,17 +178,11 @@
                    VerticalAlignment="Center"
                    Margin="0 0 20 0"/>
 
-        <TextBox Grid.Row="5" 
+        <TextBox x:Name="txtNumberDoc" 
+                 Grid.Row="5" 
                  Grid.Column="1"
-                 BorderBrush="Black"
-                 BorderThickness="1"                 
-                 Height="35"
-                 Margin="50 0 30 0"
-                 VerticalAlignment="Center"
-                 VerticalContentAlignment="Center"
-                 HorizontalContentAlignment="Center"
-                 FontSize="20"
-                 Foreground="Brown"/>
+                 GotFocus="txtNumberDoc_GotFocus"
+                 Style="{StaticResource TextBoxStyle1}"/>
 
         <TextBlock Grid.Row="5" 
                    Grid.Column="2" 
@@ -220,17 +193,19 @@
                    VerticalAlignment="Center"
                    Margin="0 0 20 0"/>
 
-        <TextBox Grid.Row="5" 
+        <DatePicker x:Name="dpDateAction" 
+                    Grid.Row="5" 
                  Grid.Column="3"
                  BorderBrush="Black"
                  BorderThickness="1"                 
                  Height="35"
                  Margin="50 0 30 0"
+                    Padding="5 0 0 0"
                  VerticalAlignment="Center"
                  VerticalContentAlignment="Center"
-                 HorizontalContentAlignment="Center"
-                 FontSize="20"
-                 Foreground="Brown"/>
+                 HorizontalContentAlignment="Left"
+                 FontSize="15"
+                 Foreground="#5F3504"/>
 
         <TextBlock Grid.Row="6" 
                    Grid.Column="0" 
@@ -241,17 +216,12 @@
                    VerticalAlignment="Center"
                    Margin="0 0 20 0"/>
 
-        <TextBox Grid.Row="6" 
+        <TextBox x:Name="txtCountProduct" 
+                 Grid.Row="6" 
                  Grid.Column="1"
-                 BorderBrush="Black"
-                 BorderThickness="1"                 
-                 Height="35"
-                 Margin="50 0 30 0"
-                 VerticalAlignment="Center"
-                 VerticalContentAlignment="Center"
-                 HorizontalContentAlignment="Center"
-                 FontSize="20"
-                 Foreground="Brown"/>
+                 TextChanged="txtCountProduct_TextChanged"
+                 GotFocus="txtCountProduct_GotFocus"
+                 Style="{StaticResource TextBoxStyle1}"/>
 
         <TextBlock Grid.Row="6" 
                    Grid.Column="2" 
@@ -262,17 +232,11 @@
                    VerticalAlignment="Center"
                    Margin="0 0 20 0"/>
 
-        <TextBox Grid.Row="6" 
+        <TextBox Name="txtInStockNow" 
+                 Grid.Row="6" 
                  Grid.Column="3"
-                 BorderBrush="Black"
-                 BorderThickness="1"                 
-                 Height="35"
-                 Margin="50 0 30 0"
-                 VerticalAlignment="Center"
-                 VerticalContentAlignment="Center"
-                 HorizontalContentAlignment="Center"
-                 FontSize="20"
-                 Foreground="Brown"/>
+                 IsReadOnly="True"
+                 Style="{StaticResource TextBoxStyle1}"/>
 
         <TextBlock Grid.Row="7" 
                    Grid.Column="0" 
@@ -283,20 +247,14 @@
                    VerticalAlignment="Center"
                    Margin="0 0 20 0"/>
 
-        <TextBox Grid.Row="7" 
+        <TextBox x:Name="txtDescription" 
+                 Grid.Row="7" 
                  Grid.Column="1" 
                  Grid.ColumnSpan="3"
-                 Grid.RowSpan="3"
-                 BorderBrush="Black"
-                 BorderThickness="1"
-                 Height="140"
-                 Margin="50 0 30 0"
-                 VerticalAlignment="Center"
-                 VerticalContentAlignment="Top"
-                 HorizontalContentAlignment="Left"
-                 FontSize="20"
-                 Foreground="Brown"
-                 AcceptsReturn="True"/>
+                 Grid.RowSpan="3"                 
+                 Height="140"                 
+                 AcceptsReturn="True"
+                 Style="{StaticResource TextBoxStyle1}"/>
 
         <Button Grid.Row="10" 
                 Grid.Column="4" 
@@ -304,10 +262,11 @@
                 Content="Сохранить" 
                 BorderBrush="Black"
                 BorderThickness="1"
-                Margin="20 0"                    
+                Margin="20 10"                    
                 VerticalContentAlignment="Center"
                 Background="#FF5F3504"
                 Foreground="White"
-                FontSize="18"/>
+                FontSize="18"
+                Click="btnAddProduct_Click"/>
     </Grid>
 </Page>

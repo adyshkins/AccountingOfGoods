@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using AccountingOfGoods.EF;
 
 namespace AccountingOfGoods.Pages
 {
@@ -23,6 +24,8 @@ namespace AccountingOfGoods.Pages
         public ProductInStockPage()
         {
             InitializeComponent();
+
+            lvProductInStock.ItemsSource = AppData.Context.ChangeQuantityProduct.ToList();
         }
     }
 }
