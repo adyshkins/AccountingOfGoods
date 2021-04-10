@@ -60,6 +60,7 @@ namespace AccountingOfGoods.Pages
             product.NameProduct = txtNameProduct.Text;
             product.IDCategory = cmbNameCategory.SelectedIndex + 1;
             product.IDUnit = cmbUnit.SelectedIndex + 1;
+            product.Description = txtDescription.Text;
 
 
             var res = MessageBox.Show("Подтвердите добавление товара", "Подтверждение добавления", MessageBoxButton.YesNo, MessageBoxImage.Question);

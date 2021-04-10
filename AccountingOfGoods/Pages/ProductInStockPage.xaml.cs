@@ -25,7 +25,40 @@ namespace AccountingOfGoods.Pages
         {
             InitializeComponent();
 
-            lvProductInStock.ItemsSource = AppData.Context.ChangeQuantityProduct.ToList();
+            
+        }
+
+        private void btnGenerateReport_Click(object sender, RoutedEventArgs e)
+        {
+            List<ChangeQuantityProduct> listProduct = new List<ChangeQuantityProduct>();
+
+            if (dpStartDate.SelectedDate != null && dpEndtDate.SelectedDate != null)
+            {
+                listProduct = AppData.Context.ChangeQuantityProduct.
+                Where(i => i.DateChange >= dpStartDate.SelectedDate && i.DateChange <= dpEndtDate.SelectedDate).
+                ToList();
+                lvProductInStock.ItemsSource = listProduct;
+            }
+            else
+            {
+                listProduct = AppData.Context.ChangeQuantityProduct.ToList();
+                var resultMessage = MessageBox.Show("Сформировать отчет за все время?", "", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                if (resultMessage == MessageBoxResult.Yes)
+                {
+                    lvProductInStock.ItemsSource = listProduct;
+                }
+
+            }
+
+        }
+
+        private void btnPrint_Click(object sender, RoutedEventArgs e) // печать листа
+        {
+            PrintDialog printDialog = new PrintDialog();
+            if (printDialog.ShowDialog() == true)
+            {
+                printDialog.PrintVisual(lvProductInStock, $"Отчет движения товаров на {DateTime.UtcNow}");
+            }
         }
     }
 }

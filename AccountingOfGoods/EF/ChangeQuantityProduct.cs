@@ -20,8 +20,11 @@ namespace AccountingOfGoods.EF
         public string NumberDoc { get; set; }
         public double Quantity { get; set; }
         public System.DateTime DateChange { get; set; }
-        public string Description { get; set; }
         public Nullable<int> IDUser { get; set; }
+        public double StartQuantity { get; set; }
+        public double InQuantity { get; set; }
+        public double OutQuantity { get; set; }
+        public string Note { get; set; }
     
         public virtual Product Product { get; set; }
         public virtual TypeChange TypeChange { get; set; }

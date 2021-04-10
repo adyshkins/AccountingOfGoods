@@ -26,6 +26,7 @@ namespace AccountingOfGoods.EF
         public Nullable<double> InStock { get; set; }
         public int IDUnit { get; set; }
         public Nullable<int> IDStorage { get; set; }
+        public string Description { get; set; }
     
         public virtual CategoryProduct CategoryProduct { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

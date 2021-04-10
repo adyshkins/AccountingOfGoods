@@ -5,20 +5,20 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="434e45794c2740478e74569ab7724903" Name="Diagram1">
-        <EntityTypeShape EntityType="ProductInStockModel.CategoryProduct" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProductInStockModel.ChangeQuantityProduct" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProductInStockModel.Product" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProductInStockModel.Storage" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProductInStockModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProductInStockModel.TypeChange" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProductInStockModel.Unit" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProductInStockModel.User" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
-        <AssociationConnector Association="ProductInStockModel.FK_Product_CategoryProduct" ManuallyRouted="false" />
-        <AssociationConnector Association="ProductInStockModel.FK_ChangeQuantityProduct_Product" ManuallyRouted="false" />
-        <AssociationConnector Association="ProductInStockModel.FK_ChangeQuantityProduct_TypeChange" ManuallyRouted="false" />
-        <AssociationConnector Association="ProductInStockModel.FK_ChangeQuantityProduct_User" ManuallyRouted="false" />
-        <AssociationConnector Association="ProductInStockModel.FK_Product_Storage" ManuallyRouted="false" />
-        <AssociationConnector Association="ProductInStockModel.FK_Product_Unit" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ProductInStockModel.CategoryProduct" Width="1.5" PointX="0.75" PointY="3.5" />
+        <EntityTypeShape EntityType="ProductInStockModel.ChangeQuantityProduct" Width="1.5" PointX="5.25" PointY="2.5" />
+        <EntityTypeShape EntityType="ProductInStockModel.Product" Width="1.5" PointX="3" PointY="2.75" />
+        <EntityTypeShape EntityType="ProductInStockModel.Storage" Width="1.5" PointX="0.75" PointY="6.375" />
+        <EntityTypeShape EntityType="ProductInStockModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="7.25" />
+        <EntityTypeShape EntityType="ProductInStockModel.TypeChange" Width="1.5" PointX="3" PointY="6.75" />
+        <EntityTypeShape EntityType="ProductInStockModel.Unit" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ProductInStockModel.User" Width="1.5" PointX="3" PointY="9.125" />
+        <AssociationConnector Association="ProductInStockModel.FK_Product_CategoryProduct" />
+        <AssociationConnector Association="ProductInStockModel.FK_ChangeQuantityProduct_Product" />
+        <AssociationConnector Association="ProductInStockModel.FK_ChangeQuantityProduct_TypeChange" />
+        <AssociationConnector Association="ProductInStockModel.FK_ChangeQuantityProduct_User" />
+        <AssociationConnector Association="ProductInStockModel.FK_Product_Storage" />
+        <AssociationConnector Association="ProductInStockModel.FK_Product_Unit" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

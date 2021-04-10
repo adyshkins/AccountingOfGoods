@@ -130,18 +130,10 @@
                    VerticalAlignment="Center"
                    Margin="0 0 20 0"/>
 
-        <ComboBox x:Name="cmbAction" Grid.Row="4" 
+        <ComboBox x:Name="cmbAction" 
+                  Grid.Row="4" 
                   Grid.Column="1" 
-                  BorderBrush="Black"
-                  BorderThickness="1"                                 
-                  Height="35"
-                  Margin="50 0 30 0"
-                  Padding="5 0 0 0"
-                  VerticalAlignment="Center"
-                  VerticalContentAlignment="Center"
-                  HorizontalContentAlignment="Left"
-                  FontSize="15"
-                  Foreground="#5F3504"
+                  Style="{StaticResource ComboBoxStyle1}"
                   IsEditable="True"/>
 
         <TextBlock Grid.Row="4" 
@@ -155,18 +147,10 @@
 
         <ComboBox x:Name="cmbStorageOut" 
                   Grid.Row="4" 
-                  Grid.Column="3"
-                  BorderBrush="Black"
-                  BorderThickness="1"                                 
-                  Height="35"
-                  Margin="50 0 30 0"
-                  Padding="5 0 0 0"
-                  VerticalAlignment="Center"
-                  VerticalContentAlignment="Center"
-                  HorizontalContentAlignment="Left"
-                  FontSize="15"
-                  Foreground="#5F3504"
+                  Grid.Column="3"                                                  
+                  Height="35"                
                   IsEditable="True"
+                  Style="{StaticResource ComboBoxStyle1}"
                   SelectionChanged="cmbStorageOut_SelectionChanged"/>
 
         <TextBlock Grid.Row="5" 
@@ -247,7 +231,7 @@
                    VerticalAlignment="Center"
                    Margin="0 0 20 0"/>
 
-        <TextBox x:Name="txtDescription" 
+        <TextBox x:Name="txtNote" 
                  Grid.Row="7" 
                  Grid.Column="1" 
                  Grid.ColumnSpan="3"

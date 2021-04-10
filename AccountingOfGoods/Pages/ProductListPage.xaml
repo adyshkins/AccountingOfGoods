@@ -27,7 +27,7 @@
                      VerticalAlignment="Center"
                      VerticalContentAlignment="Center"
                      HorizontalContentAlignment="Center"
-                     FontSize="20"
+                     FontSize="15"
                      Foreground="Brown"
                      GotFocus="txtSearchById_GotFocus"
                      LostFocus="txtSearchById_LostFocus"
@@ -43,7 +43,7 @@
                      VerticalAlignment="Center"
                      VerticalContentAlignment="Center"
                      HorizontalContentAlignment="Center"
-                     FontSize="20"
+                     FontSize="15"
                      Foreground="Brown" 
                      GotFocus="txtSearchByName_GotFocus"
                      LostFocus="txtSearchByName_LostFocus"
@@ -59,7 +59,7 @@
                      VerticalAlignment="Center"
                      VerticalContentAlignment="Center"
                      HorizontalContentAlignment="Center"
-                     FontSize="20"
+                     FontSize="15"
                      Foreground="Brown"
                      GotFocus="txtSearchByNum_GotFocus"
                      LostFocus="txtSearchByNum_LostFocus"
@@ -71,7 +71,7 @@
                        Margin="118 0 20 0"
                        FontSize="16"
                        VerticalAlignment="Center"/>
-            <ComboBox x:Name="cmbSirting" 
+            <ComboBox x:Name="cmbSorting" 
                       BorderBrush="Black"
                       BorderThickness="1"
                       Width="200"
@@ -79,10 +79,10 @@
                       Margin="30 0"
                       VerticalAlignment="Center"
                       VerticalContentAlignment="Center"
-                      HorizontalContentAlignment="Center"
-                      FontSize="20"
+                      FontSize="15"
                       Foreground="Brown"
-                      IsEditable="True"/>
+                      IsEditable="True"
+                      SelectionChanged="cmbSorting_SelectionChanged"/>
 
             <Button x:Name="btnAddProduct" 
                     Content="Добавить товар" 
@@ -115,7 +115,7 @@
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="600"/>
+                                <ColumnDefinition Width="590"/>
                                 <ColumnDefinition Width="350"/>
                             </Grid.ColumnDefinitions>
                             <!-- Левая колонка -->

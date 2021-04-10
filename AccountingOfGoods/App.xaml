@@ -14,7 +14,30 @@
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="Padding" Value="5 0 0 0"/>
             <Setter Property="Margin" Value="50 0 30 0"/>
+        </Style>
 
+        <Style x:Key="PasswordBoxStyle1" TargetType="PasswordBox">
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Foreground" Value="#5F3504"/>
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="BorderBrush" Value="#5F3504"/>
+            <Setter Property="BorderThickness" Value="0.5"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="5 0 0 0"/>
+            <Setter Property="Margin" Value="50 0 30 0"/>
+        </Style>
+
+        <Style x:Key="ComboBoxStyle1" TargetType="ComboBox">
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Foreground" Value="#5F3504"/>
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="BorderBrush" Value="#5F3504"/>
+            <Setter Property="BorderThickness" Value="0.5"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="5 0 0 0"/>
+            <Setter Property="Margin" Value="50 0 30 0"/>
         </Style>
     </Application.Resources>
 </Application>

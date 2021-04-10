@@ -34,7 +34,7 @@
                     <ColumnDefinition Width="2*"/>
                     <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
-                
+
                 <TextBlock Grid.Column="0" 
                            Text="Период от:"
                            TextWrapping="Wrap"
@@ -43,7 +43,8 @@
                            VerticalAlignment="Center"
                            Margin="0 0 20 0"/>
 
-                <DatePicker Grid.Row="1" 
+                <DatePicker Name="dpStartDate" 
+                            Grid.Row="1" 
                             Grid.Column="1"
                             BorderBrush="Black"
                             BorderThickness="1"                 
@@ -63,7 +64,8 @@
                            HorizontalAlignment="Right"
                            VerticalAlignment="Center"/>
 
-                <DatePicker Grid.Row="1" 
+                <DatePicker x:Name="dpEndtDate" 
+                            Grid.Row="1" 
                             Grid.Column="3"
                             BorderBrush="Black"
                             BorderThickness="1"                 
@@ -74,16 +76,18 @@
                             HorizontalContentAlignment="Center"
                             FontSize="20"
                             Foreground="Brown"/>
-                <Button Grid.Column="4" 
+                <Button x:Name="btnGenerateReport" 
+                        Grid.Column="4" 
                         Content="Сформировать" 
-                            BorderBrush="Black"
-                            BorderThickness="1"
-                            Height="40"
-                            Margin="20 0"                    
-                            VerticalContentAlignment="Center"
-                            Background="#FF5F3504"
-                            Foreground="White"
-                            FontSize="18"/>
+                        BorderBrush="Black"
+                        BorderThickness="1"
+                        Height="40"
+                        Margin="20 0"                    
+                        VerticalContentAlignment="Center"
+                        Background="#FF5F3504"
+                        Foreground="White"
+                        FontSize="18"
+                        Click="btnGenerateReport_Click"/>
             </Grid>
         </Border>
 
@@ -92,14 +96,14 @@
             <ListView x:Name="lvProductInStock" Margin="10"
                       Background="{x:Null}" HorizontalAlignment="Center">
                 <ListView.View>
-                    <GridView>
-                        <GridViewColumn Header="Артикул" Width="100" DisplayMemberBinding="{Binding IDProduct}"/>
+                    <GridView >
+                        <GridViewColumn Header="Артикул" Width="100" DisplayMemberBinding="{Binding IDProduct}" />
                         <GridViewColumn Header="Название" Width="260" DisplayMemberBinding="{Binding Product.NameProduct}"/>
                         <GridViewColumn Header="Ед.изм" Width="100" DisplayMemberBinding="{Binding Product.Unit.NameUnit}"/>
-                        <GridViewColumn Header="Начальный остаток" Width="150" DisplayMemberBinding="{Binding}"/>
-                        <GridViewColumn Header="Приход" Width="100" DisplayMemberBinding="{Binding}"/>
-                        <GridViewColumn Header="Расход" Width="100" DisplayMemberBinding="{Binding}"/>
-                        <GridViewColumn Header="Конечный остаток" Width="150" DisplayMemberBinding="{Binding}"/>
+                        <GridViewColumn Header="Начальный остаток" Width="148" DisplayMemberBinding="{Binding StartQuantity}"/>
+                        <GridViewColumn Header="Приход" Width="100" DisplayMemberBinding="{Binding InQuantity}"/>
+                        <GridViewColumn Header="Расход" Width="100" DisplayMemberBinding="{Binding OutQuantity}"/>
+                        <GridViewColumn Header="Конечный остаток" Width="150" DisplayMemberBinding="{Binding Quantity}"/>
                     </GridView>
                 </ListView.View>
             </ListView>
@@ -122,11 +126,20 @@
                 Background="#FFF8F8F8">
                 <ListView Margin="10"
                       Background="{x:Null}">
-
+                    <ListView.View>
+                        <GridView >
+                            <GridViewColumn Header="Ед.изм" Width="auto" DisplayMemberBinding="{Binding }"/>
+                            <GridViewColumn Header="Начальный остаток" Width="auto" DisplayMemberBinding="{Binding}"/>
+                            <GridViewColumn Header="Приход" Width="auto" DisplayMemberBinding="{Binding}"/>
+                            <GridViewColumn Header="Расход" Width="auto" DisplayMemberBinding="{Binding }"/>
+                            <GridViewColumn Header="Конечный остаток" Width="auto" DisplayMemberBinding="{Binding}"/>
+                        </GridView>
+                    </ListView.View>
                 </ListView>
             </Border>
 
-            <Button Grid.Column="2" 
+            <Button x:Name="btnPrint" 
+                    Grid.Column="2" 
                     Content="На печать" 
                     BorderBrush="Black"
                     BorderThickness="1"
@@ -135,10 +148,11 @@
                     VerticalContentAlignment="Center"
                     Background="#FF5F3504"
                     Foreground="White"
-                    FontSize="18"/>
+                    FontSize="18"
+                    Click="btnPrint_Click"/>
 
         </Grid>
-       
-    </Grid>   
-    
+
+    </Grid>
+
 </Page>

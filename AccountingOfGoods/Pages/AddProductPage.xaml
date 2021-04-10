@@ -23,16 +23,8 @@
                        HorizontalAlignment="Left"
                            Margin="0 0 20 0"/>
                 <TextBox x:Name="txtIdProduct"
-                            BorderBrush="Black"
-                            BorderThickness="1"
                             Width="600"
-                            Height="35"
-                            Margin="50 0 30 0"
-                            VerticalAlignment="Center"
-                            VerticalContentAlignment="Center"
-                            HorizontalContentAlignment="Center"
-                            FontSize="20"
-                            Foreground="Brown"/>
+                            Style="{StaticResource TextBoxStyle1}"/>
             </WrapPanel>
 
             <WrapPanel HorizontalAlignment="Right"
@@ -42,16 +34,8 @@
                        HorizontalAlignment="Left"
                            Margin="0 0 20 0"/>
                 <TextBox x:Name="txtNameProduct"
-                            BorderBrush="Black"
-                            BorderThickness="1"
-                            Width="600"
-                            Height="35"
-                            Margin="50 0 30 0"
-                            VerticalAlignment="Center"
-                            VerticalContentAlignment="Center"
-                            HorizontalContentAlignment="Center"
-                            FontSize="20"
-                            Foreground="Brown"/>
+                         Width="600"
+                         Style="{StaticResource TextBoxStyle1}"/>
             </WrapPanel>
 
             <WrapPanel HorizontalAlignment="Right"
@@ -101,17 +85,11 @@
                        FontSize="20"
                        HorizontalAlignment="Left"
                            Margin="0 0 20 0"/>
-                <TextBox BorderBrush="Black"
-                         BorderThickness="1"
+                <TextBox x:Name="txtDescription" 
                          Width="600"
                          Height="100"
-                         Margin="50 0 30 0"
-                         VerticalAlignment="Center"
-                         VerticalContentAlignment="Top"
-                         HorizontalContentAlignment="Left"
-                         FontSize="20"
-                         Foreground="Brown"
-                         AcceptsReturn="True"/>
+                         AcceptsReturn="True"
+                         Style="{StaticResource TextBoxStyle1}"/>
             </WrapPanel>
 
             <Button x:Name="btnAddProduct" 

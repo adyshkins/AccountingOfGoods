@@ -66,6 +66,7 @@
     </ApplicationDefinition>
     <Compile Include="ClassHelper\NavigateClass.cs" />
     <Compile Include="ClassHelper\Product.cs" />
+    <Compile Include="ClassHelper\Unit.cs" />
     <Compile Include="ClassHelper\UserData.cs" />
     <Compile Include="EF\AppData.cs" />
     <Compile Include="EF\CategoryProduct.cs">

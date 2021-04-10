@@ -24,13 +24,13 @@ namespace AccountingOfGoods.Pages
     {
         List<Product> products = new List<Product>();
 
-        List<string> sortingList = new List<string>() {"Названию", "остатку на складе", "Категории", "Секции хранения"};
+        List<string> sortingList = new List<string>() {"Названию", "Остатку на складе", "Категории", "Секции хранения"};
         public ProductListPage()
         {
             InitializeComponent();
 
-            cmbSirting.ItemsSource = sortingList;
-            cmbSirting.SelectedIndex = 0;
+            cmbSorting.ItemsSource = sortingList;
+            cmbSorting.SelectedIndex = 0;
 
             GetList();
         }
@@ -47,17 +47,38 @@ namespace AccountingOfGoods.Pages
 
             if (txtSearchById.Text != "Поиск по артикулу")
             {
-                products = products.Where(i => i.ID.ToString().Contains(txtSearchById.Text)).ToList();
+                products = products.Where(i => i.ID.ToString().ToLower().Contains(txtSearchById.Text.ToLower())).ToList();
             }
 
             if (txtSearchByName.Text != "Поиск по названию")
             {
-                products = products.Where(i => i.NameProduct.Contains(txtSearchByName.Text)).ToList();
+                products = products.Where(i => i.NameProduct.ToLower().Contains(txtSearchByName.Text.ToLower())).ToList();
             }
 
             if (txtSearchByNum.Text != "Поиск по № секции")
             {
-                products = products.Where(i => i.Storage.NumberStorage.ToString().Contains(txtSearchByNum.Text)).ToList();
+                products = products.Where(i => i.Storage.NumberStorage.ToLower().ToString().Contains(txtSearchByNum.Text.ToLower())).ToList();
+            }
+
+            switch (cmbSorting.SelectedIndex)
+            {
+                case 0:
+                    products = products.OrderBy(i => i.NameProduct).ToList();
+                    break;
+
+                case 1:
+                    products = products.OrderBy(i => i.InStock).ToList();
+                    break;
+
+                case 2:
+                    products = products.OrderBy(i => i.IDCategory).ToList();
+                    break;
+
+                case 3:
+                    products = products.OrderBy(i => i.IDStorage).ToList();
+                    break;
+                default:
+                    break;
             }
 
             lvProduct.ItemsSource = products;
@@ -153,6 +174,9 @@ namespace AccountingOfGoods.Pages
             }
         }
 
-       
+        private void cmbSorting_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            GetList();
+        }
     }
 }
